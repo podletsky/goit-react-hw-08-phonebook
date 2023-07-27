@@ -3,7 +3,7 @@ import {
   fetchContacts,
   addContacts,
   deleteContacts,
-} from '../../redux/operation/operation';
+} from '../../contacts/operation/operation';
 
 const initialState = {
   items: [],

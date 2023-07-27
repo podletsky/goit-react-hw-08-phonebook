@@ -1,11 +1,14 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchContacts, deleteContacts } from '../../redux/operation/operation';
+import {
+  fetchContacts,
+  deleteContacts,
+} from '../../redux/contacts/operation/operation';
 import {
   selestFilter,
   selestSelectors,
   selestLoading,
-} from '../../redux/selectors/selectors';
+} from '../../redux/contacts/selectors/selectors';
 import styles from '../contactList/ContactList.module.css';
 import { Button } from 'react-bootstrap';
 import { PacmanLoader } from 'react-spinners';
