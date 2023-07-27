@@ -1,6 +1,6 @@
 import { Navigation } from '../navigation/Navigation';
 import { UserMenu } from '../userMenu/UserMenu';
-import { AuthNav } from '../authNav/AuthNav';
+import { AuthNav } from '../../components/authNav/AuthNav';
 import { useAuth } from '../../hooks/useAuth';
 
 export const AppBar = () => {
