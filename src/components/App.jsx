@@ -1,12 +1,12 @@
 import { useEffect, lazy } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
+import { PrivateRoute } from './PrivateRoute';
 import { RestrictedRoute } from '../components/RestrictedRoute';
 import { refreshUser } from '../redux/auth/operation/operation';
 import { useAuth } from '../hooks/useAuth';
-import { AppBar } from '../components/appBar/AppBar';
-import { PrivateRoute } from './PrivateRoute';
-
+// import { AppBar } from '../components/appBar/AppBar';
+import { Layout } from '../components/Layout';
 const HomePage = lazy(() => import('../pages/Home'));
 const RegisterPage = lazy(() => import('../pages/Register'));
 const LoginPage = lazy(() => import('../pages/Login'));
@@ -24,7 +24,7 @@ export const App = () => {
     <b>Refreshing user...</b>
   ) : (
     <Routes>
-      <Route path="/" element={<AppBar />}>
+      <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
           path="/register"
