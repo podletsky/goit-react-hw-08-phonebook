@@ -1,5 +1,6 @@
 import { useDispatch } from 'react-redux';
 import { register } from '../../redux/auth/operation/operation';
+
 import styles from '../loginForm/login.module.css';
 export const RegisterForm = () => {
   const dispatch = useDispatch();
@@ -14,7 +15,7 @@ export const RegisterForm = () => {
         password: form.elements.password.value,
       })
     );
-    alert('registration');
+
     // form.reset();
   };
 

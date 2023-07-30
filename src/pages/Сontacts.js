@@ -5,7 +5,7 @@ import { selestLoading } from '../redux/contacts/selectors/selectors';
 import ContactForm from '../components/сontactForm/ContactForm';
 import ContactList from '../components/contactList/ContactList';
 import Filter from '../components/filter/Filter';
-
+import styles from '../components/loginForm/login.module.css';
 export default function Contacts() {
   const dispatch = useDispatch();
   const isLoading = useSelector(selestLoading);
@@ -15,7 +15,7 @@ export default function Contacts() {
   }, [dispatch]);
 
   return (
-    <div>
+    <div className={styles.contacts}>
       <h1>Phonebook</h1>
       <ContactForm />
       <h2>Contacts</h2>
