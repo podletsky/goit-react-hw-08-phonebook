@@ -6,15 +6,15 @@ import {
 } from '../../redux/contacts/operation/operation';
 import {
   selestFilter,
-  selestSelectors,
   selestLoading,
 } from '../../redux/contacts/selectors/selectors';
 import styles from '../contactList/ContactList.module.css';
 import { Button } from 'react-bootstrap';
 import { PacmanLoader } from 'react-spinners';
-import Notiflix from 'notiflix';
+
 const ContactList = () => {
-  const contacts = useSelector(selestSelectors);
+  const contacts = useSelector(state => state.contacts.items) || [];
+
   const filter = useSelector(selestFilter);
   const isLoading = useSelector(selestLoading);
   const dispatch = useDispatch();
@@ -24,7 +24,6 @@ const ContactList = () => {
   }, [dispatch]);
 
   const handleDelete = id => {
-    Notiflix.Notify.warning('Contact deleted');
     dispatch(deleteContacts(id));
   };
 

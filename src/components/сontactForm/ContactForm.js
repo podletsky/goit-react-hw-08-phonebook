@@ -2,14 +2,15 @@ import React, { useState } from 'react';
 
 import styles from '../contactList/ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-import { selestSelectors } from '../../redux/contacts/selectors/selectors';
+// import { selestSelectors } from '../../redux/contacts/selectors/selectors';
 import { addContacts } from '../../redux/contacts/operation/operation';
 import Notiflix from 'notiflix';
 const ContactForm = () => {
   const [name, setName] = useState('');
   const [number, setNumber] = useState('');
 
-  const contacts = useSelector(selestSelectors);
+  const contacts = useSelector(state => state.contacts.items) || [];
+
   const dispatch = useDispatch();
 
   const handleNameChange = event => {
@@ -35,7 +36,6 @@ const ContactForm = () => {
           number: number,
         })
       );
-      Notiflix.Notify.success('Super,a contact added successfully');
       setName('');
       setNumber('');
     }

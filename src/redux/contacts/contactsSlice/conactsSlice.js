@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import Notiflix from 'notiflix';
 import {
   fetchContacts,
   addContacts,
@@ -41,6 +42,7 @@ const contactsSlice = createSlice({
         state.isLoading = false;
         state.error = null;
         state.items.unshift(action.payload);
+        Notiflix.Notify.success('Super,a contact added successfully');
       })
       .addCase(addContacts.rejected, (state, action) => {
         state.isLoading = false;
@@ -48,6 +50,7 @@ const contactsSlice = createSlice({
       })
       .addCase(deleteContacts.pending, state => {
         state.isLoading = true;
+        Notiflix.Notify.warning('Contact deleted');
       })
       .addCase(deleteContacts.fulfilled, (state, action) => {
         state.isLoading = false;
