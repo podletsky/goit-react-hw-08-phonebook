@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import styles from '../contactList/ContactList.module.css';
 import { useDispatch, useSelector } from 'react-redux';
-// import { selestSelectors } from '../../redux/contacts/selectors/selectors';
+
 import { addContacts } from '../../redux/contacts/operation/operation';
 import Notiflix from 'notiflix';
 const ContactForm = () => {

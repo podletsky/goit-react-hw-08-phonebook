@@ -1,27 +1,20 @@
-import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { deleteContacts } from '../../redux/contacts/operation/operation';
 import {
-  fetchContacts,
-  deleteContacts,
-} from '../../redux/contacts/operation/operation';
-import {
-  selestFilter,
-  selestLoading,
+  selectContacts,
+  selectFilter,
+  selectLoading,
 } from '../../redux/contacts/selectors/selectors';
 import styles from '../contactList/ContactList.module.css';
 import { Button } from 'react-bootstrap';
 import { PacmanLoader } from 'react-spinners';
 
 const ContactList = () => {
-  const contacts = useSelector(state => state.contacts.items) || [];
+  const contacts = useSelector(selectContacts);
 
-  const filter = useSelector(selestFilter);
-  const isLoading = useSelector(selestLoading);
+  const filter = useSelector(selectFilter);
+  const isLoading = useSelector(selectLoading);
   const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchContacts());
-  }, [dispatch]);
 
   const handleDelete = id => {
     dispatch(deleteContacts(id));

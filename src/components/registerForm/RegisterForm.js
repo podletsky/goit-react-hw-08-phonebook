@@ -27,15 +27,27 @@ export const RegisterForm = () => {
     >
       <label className={styles.text}>
         Username
-        <input className={styles.inputReg} type="text" name="name" />
+        <input
+          className={styles.inputReg}
+          type="text"
+          name="name"
+          required
+          maxLength={30}
+        />
       </label>
       <label className={styles.text}>
         Email
-        <input className={styles.inputReg} type="email" name="email" />
+        <input className={styles.inputReg} type="email" name="email" required />
       </label>
       <label className={styles.text}>
         Password
-        <input className={styles.inputReg} type="password" name="password" />
+        <input
+          className={styles.inputReg}
+          type="password"
+          name="password"
+          required
+          minLength={8}
+        />
       </label>
       <button className={styles.buttonFormReg} type="submit">
         Register

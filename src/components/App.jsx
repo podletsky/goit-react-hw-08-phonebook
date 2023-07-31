@@ -1,4 +1,5 @@
 import { useEffect, lazy } from 'react';
+import { Navigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router-dom';
 import { PrivateRoute } from './PrivateRoute';
@@ -52,6 +53,7 @@ export const App = () => {
             }
           />
         </Route>
+        <Route path="*" element={<Navigate to="/" />} />
       </Routes>
     </div>
   );
